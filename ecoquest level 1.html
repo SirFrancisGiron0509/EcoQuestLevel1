@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity id="tree" gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Tree/glTF/Tree.gltf"
+                      position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+            <a-text value="Click to plant trees!" position="-0.5 1 0" scale="1 1 1" color="green"></a-text>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+        document.querySelector('#tree').addEventListener('click', function () {
+            alert("You planted a tree! 🌳 Next level: Ocean Cleanup!");
+            window.location.href = "level2.html";
+        });
+    </script>
+
+</body>
+</html>
